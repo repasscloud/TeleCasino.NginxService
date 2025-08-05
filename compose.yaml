@@ -1,0 +1,76 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - baccarat
+      - dice
+      - keno
+      - roulette
+      - slots
+    networks:
+      - telecasino_net
+
+  baccarat:
+    image: repasscloud/telecasino-baccaratgameservice:0.1.6
+    container_name: baccarat-api
+    expose:
+      - "8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    networks:
+      - telecasino_net
+
+  dice:
+    image: repasscloud/telecasino-dicegameservice:0.1.6
+    container_name: dice-api
+    expose:
+      - "8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    networks:
+      - telecasino_net
+
+  keno:
+    image: repasscloud/telecasino-kenogameservice:0.1.6
+    container_name: keno-api
+    expose:
+      - "8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    networks:
+      - telecasino_net
+
+  roulette:
+    image: repasscloud/telecasino-roulettegameservice:0.1.6
+    container_name: roulette-api
+    expose:
+      - "8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    networks:
+      - telecasino_net
+
+  slots:
+    image: repasscloud/telecasino-slotsgameservice:0.1.6
+    container_name: slots-api
+    expose:
+      - "8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    networks:
+      - telecasino_net
+
+networks:
+  telecasino_net:
+    driver: bridge
