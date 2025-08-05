@@ -61,7 +61,7 @@ services:
       - telecasino_net
 
   slots:
-    image: repasscloud/telecasino-slotsgameservice:0.1.9
+    image: repasscloud/telecasino-slotsgameservice:0.1.10
     container_name: slots-api
     expose:
       - "8080"
