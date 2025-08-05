@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:1.28.0
     container_name: nginx-proxy
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
