@@ -22,7 +22,7 @@ services:
     expose:
       - "8080"
     volumes:
-      - ./volumes/baccarat:/app/wwwroot
+      - /app/volumes/baccarat:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -35,7 +35,7 @@ services:
     expose:
       - "8080"
     volumes:
-      - ./volumes/dice:/app/wwwroot
+      - /app/volumes/dice:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -48,7 +48,7 @@ services:
     expose:
       - "8080"
     volumes:
-      - ./volumes/keno:/app/wwwroot
+      - /app/volumes/keno:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -61,7 +61,7 @@ services:
     expose:
       - "8080"
     volumes:
-      - ./volumes/roulette:/app/wwwroot
+      - /app/volumes/roulette:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -74,7 +74,7 @@ services:
     expose:
       - "8080"
     volumes:
-      - ./volumes/slots:/app/wwwroot
+      - /app/volumes/slots:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
