@@ -30,7 +30,7 @@ services:
       - telecasino_net
 
   dice:
-    image: repasscloud/telecasino-dicegameservice:0.1.6
+    image: repasscloud/telecasino-dicegameservice:0.2.0
     container_name: dice-api
     expose:
       - "8080"
