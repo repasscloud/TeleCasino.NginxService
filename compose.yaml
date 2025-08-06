@@ -21,6 +21,8 @@ services:
     container_name: baccarat-api
     expose:
       - "8080"
+    volumes:
+      - ./volumes/baccarat:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -32,6 +34,8 @@ services:
     container_name: dice-api
     expose:
       - "8080"
+    volumes:
+      - ./volumes/dice:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -43,6 +47,8 @@ services:
     container_name: keno-api
     expose:
       - "8080"
+    volumes:
+      - ./volumes/keno:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -54,6 +60,8 @@ services:
     container_name: roulette-api
     expose:
       - "8080"
+    volumes:
+      - ./volumes/roulette:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
@@ -65,6 +73,8 @@ services:
     container_name: slots-api
     expose:
       - "8080"
+    volumes:
+      - ./volumes/slots:/app/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_RUNNING_IN_CONTAINER=true
